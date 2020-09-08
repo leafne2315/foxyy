@@ -28,7 +28,7 @@ public class ViewDetect : MonoBehaviour
         float subAngle = DetectAngle / accuracy;
         for(int i=0;i<accuracy;i++)
         {
-            RayDir = PlayerCtroller.FlyDir.normalized;
+            RayDir = new Vector2(1,0);
             RayDir = Quaternion.AngleAxis(-DetectAngle/2 + Mathf.Repeat(Ray_RotatePerSecond*Time.time + i*subAngle,DetectAngle),Vector3.back)*RayDir;
             RaycastHit2D hit = Physics2D.Raycast(OriginPos.position,RayDir,RayLength, ~ignoreYourself);
             
